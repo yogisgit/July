@@ -29,6 +29,7 @@ public class ListenersClass implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
 		test.log(Status.FAIL, "Failed!!!");
+		test.fail(result.getThrowable());
 		
 		ScreenshotCap ss = new ScreenshotCap();
 		WebDriver driver=null;
@@ -42,7 +43,8 @@ public class ListenersClass implements ITestListener {
 		}
 		
 		try {
-			ss.takeScreenshot(driver, methodName);
+			String path = ss.takeScreenshot(driver, methodName);
+			test.addScreenCaptureFromPath(path, result.getMethod().getMethodName());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

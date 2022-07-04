@@ -9,10 +9,12 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class ScreenshotCap {
-	public void takeScreenshot(WebDriver driver, String methodName) throws IOException {
+	public String takeScreenshot(WebDriver driver, String methodName) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 		String dest = "/Users/yogi/Java/July/screenshots/"+methodName+".jpg";
 		FileUtils.copyFile(src, new File(dest));
+		
+		return dest;
 	}
 }
