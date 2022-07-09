@@ -8,8 +8,8 @@
     <classes>
       <class name="com.july.tests.RSPracticeTest">
         <methods>
-          <include name="RSAPracticePage" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="radioBtnCheck"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.july.tests.RSPracticeTest -->

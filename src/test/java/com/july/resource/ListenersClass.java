@@ -14,22 +14,21 @@ import com.july.reports.ReportGen;
 import com.july.util.ScreenshotCap;
 
 public class ListenersClass implements ITestListener {
-	ExtentReports extent;
+	ExtentReports extent = ReportGen.genReport();
 	ExtentTest test;
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 	
 	public void onTestStart(ITestResult result) {
-		ReportGen rg = new ReportGen();
-		extent = rg.genReport();
 		test = extent.createTest(result.getMethod().getMethodName());
+		extentTest.set(test);
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		test.log(Status.PASS, "Passed!!!");
+		extentTest.get().log(Status.PASS, "Test Passed!!!");
 	}
 
 	public void onTestFailure(ITestResult result) {
-		test.log(Status.FAIL, "Failed!!!");
-		test.fail(result.getThrowable());
+		extentTest.get().fail(result.getThrowable());
 		
 		ScreenshotCap ss = new ScreenshotCap();
 		WebDriver driver=null;

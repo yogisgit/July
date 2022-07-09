@@ -5,7 +5,7 @@
     <classes>
       <class name="com.july.tests.RSPracticeTest">
         <methods>
-          <include name="RSAPracticePage" invocation-numbers="0"/>
+          <include name="dropDownSugg"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>

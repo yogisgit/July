@@ -5,7 +5,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class ReportGen {
 	
-	public ExtentReports genReport() {
+	public static ExtentReports genReport() {
 		String path = "/Users/yogi/Java/July/reports/extent.html";
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter(path);
 		reporter.config().setReportName("Web Automation Results");
