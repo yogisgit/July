@@ -14,7 +14,7 @@ public class PracticePageObjects {
 	}
 	
 	private By alert = By.xpath("//input[@class='btn-style' and @value='Alert']");
-	private By alertWithName = By.xpath("//input[@name='enter-name']");
+	private By alertWithName = By.xpath("//input[@name='entername']");
 	
 	private By radio1 = By.xpath("//input[@name='radioButton' and @value='radio1']");
 	private By radio2 = By.xpath("//input[@name='radioButton' and @value='radio2']");

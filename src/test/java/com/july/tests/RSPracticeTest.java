@@ -29,7 +29,7 @@ public class RSPracticeTest extends BaseClass{
 		driver = initDriver();
 		log.info("Browser opened");
 	}
-	@Test(dataProvider="data-Provider", dataProviderClass=DataProvidersDB.class, priority=1, enabled=false)
+	@Test(dataProvider="data-Provider", dataProviderClass=DataProvidersDB.class, priority=1, enabled=true)
 	public void RSAPracticePage(String data) {
 		PracticePageObjects pp = new PracticePageObjects(driver);
 		pp.alertBtn().click();
@@ -49,7 +49,7 @@ public class RSPracticeTest extends BaseClass{
 		
 	}
 	
-	@Test(priority=2, enabled=false)
+	@Test(priority=2, enabled=true)
 	public void radioBtnCheck()
 	{
 		PracticePageObjects pp = new PracticePageObjects(driver);
@@ -66,6 +66,7 @@ public class RSPracticeTest extends BaseClass{
 	
 	@Test(dataProvider="data-Country", dataProviderClass=DataProvidersDB.class, priority=3, enabled=true)
 	public void dropDownSugg(String data) {
+		
 		PracticePageObjects pp = new PracticePageObjects(driver);
 		pp.suggistiveDropDown().sendKeys(data);
 		List<WebElement> countries = pp.countries();
@@ -84,7 +85,7 @@ public class RSPracticeTest extends BaseClass{
 	
 	}
 	
-	@Test(priority=4, enabled=false)
+	@Test(priority=4, enabled=true)
 	public void staticDropDown() {
 		PracticePageObjects pp = new PracticePageObjects(driver);
 		WebElement dropDown = pp.staticDropDown();
